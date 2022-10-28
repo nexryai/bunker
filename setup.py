@@ -22,4 +22,9 @@ setuptools.setup(
         'console_scripts': ['bunker = bunker.bunker:main']
     },
     python_requires='>=3.7',
+    install_requires=[
+          'pyyaml',
+          'boto3',
+          'python-gnupg',
+      ],
 )
