@@ -3,7 +3,10 @@
 [![Repo](https://img.shields.io/badge/nexryai%2Fbunker-master-lightgrey?style=for-the-badge&logo=gitlab)](https://git.sda1.net/nexryai/bunker)
 [![python](https://img.shields.io/badge/python-EEE?style=for-the-badge&logo=python)](https://www.python.org/)
 <br><br>
-安全にオブジェクトストレージにディレクトリをバックアップする小さくてスマートなPythonプログラム
+安全にオブジェクトストレージにディレクトリをバックアップする小さくてスマートなPythonプログラム  
+ - バックアップするファイルはアップロードする前にGPGを使用して複数の層で暗号化できます。あなた以外にファイルが読まれる心配はありません。エンドツーエンド暗号化を実現します。
+ - pipを使用してインストール可能。様々な環境で使えます。
+ - バックアップ前後に任意のコマンドを実行可能。サーバーのバックアップにも最適です。
 
 ## インストール
 `pip install git+https://git.sda1.net/nexryai/bunker`
