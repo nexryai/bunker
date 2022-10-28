@@ -1,6 +1,6 @@
 # bunker
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=for-the-badge)](https://opensource.org/licenses/Apache-2.0)
-[![Repo](https://img.shields.io/badge/nexryai%2Fbunker-master-lightgrey?style=for-the-badge&logo=gitlab)](https://git.freasearch.org/frea/search/)
+[![Repo](https://img.shields.io/badge/nexryai%2Fbunker-master-lightgrey?style=for-the-badge&logo=gitlab)](https://git.sda1.net/nexryai/bunker)
 [![python](https://img.shields.io/badge/python-EEE?style=for-the-badge&logo=python)](https://www.python.org/)
 <br><br>
 安全にオブジェクトストレージにディレクトリをバックアップする小さくてスマートなPythonプログラム
