@@ -31,6 +31,7 @@ def load_config():
             config = yaml.safe_load(yml)
     except FileNotFoundError as e:
         msg.fetal_error("Config file does not exist.", e)
+        sys.exit (1)
     except Exception as e:
         msg.fetal_error("Faild to load /etc/bunker/config.yml", e)
         sys.exit (1)
