@@ -24,6 +24,7 @@ class print_message:
 
 
 def load_config():
+    msg = print_message()
     # 設定ファイルを開く
     try:
         with open('/etc/bunker/config.yml', 'r') as yml:
@@ -39,6 +40,7 @@ def load_config():
 
 def get_gnupg_dir():
     # gnupgのディレクトリ検出
+    msg = print_message()
     home_dir = os.environ['HOME']
 
     try:
