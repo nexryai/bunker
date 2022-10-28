@@ -269,7 +269,6 @@ def restore():
         msg.info("Successfully uncompressed the backup directory!")
 
 
-
 def main():
     msg = print_message()
     args = sys.argv
@@ -286,8 +285,6 @@ def main():
     else :
         msg.error("Invalid argument.")
         sys.exit(1)
-
-
 
 
 if __name__ == '__main__':

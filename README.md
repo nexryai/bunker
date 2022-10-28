@@ -12,7 +12,17 @@
 `pip install git+https://git.sda1.net/nexryai/bunker`
 
 ## 設定
-`/etc/bunker/config.yml`  
+### Step1
+PGP鍵を生成します。複数レイヤーで暗号化したい場合は複数生成します。この作業はサーバー以外のマシンで行うことを推奨します。  
+生成した鍵のIDを覚えておきます。
+
+### Step2
+`gpg --export-keys --armor [生成した鍵のID] > public.key`で公開鍵をエクスポートし、サーバへ送りつけます。テキストファイルとして開けるのでサーバーにsshで繋ぎエディターに貼っつけるのがおすすめです。  
+送りつけたら`gpg --import [ファイル名]`でインポートします。
+
+### Step
+`/etc/bunker/config.yml` を作成し以下のように設定を行います。
+
 ```
 server_name: server1
 
@@ -40,3 +50,11 @@ encrypt_keys:
 post_backup_exec:
   - command_2
 ```
+
+
+## 使い方
+### バックアップ
+`bunker backup` をrootとして実行するだけです。
+
+###リストア
+秘密鍵を生成したマシンで `bunker restore` を実行します。
