@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="bunker",
-    version="0.1.2",
+    version="0.1.3",
     author="nexryai",
     author_email="gnomer@tuta.io",
     description="Backup server data to S3 object storage safety.",
