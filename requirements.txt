@@ -1,3 +1,4 @@
 pyyaml
 boto3
 python-gnupg 
+keyring

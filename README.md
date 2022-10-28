@@ -23,6 +23,10 @@ s3_secret_access_key: <access_key_secret>
 s3_bucket_name: <bucket_name>
 
 # backup config
+
+# Number of backups to keep
+save_backups: 5
+
 backup_dirs:
   - /path/to/backup/dir
   
