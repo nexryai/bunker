@@ -6,10 +6,23 @@ import yaml
 import subprocess
 import datetime
 
-import msg
+class print_message:
+    def info(self, message):
+        sys.stdout.write("\033[32m ✔ \033[0m " + str(message) + "\n")
+
+    def error(self, message):
+        sys.stdout.write("\033[31m ✗ \033[0m " + str(message) + "\n")
+
+    def fetal_error(self, message, e):
+        exception = str(e)
+        sys.stderr.write("\033[31m" + "=!=========FETAL ERROR=========!=" + "\n")
+        sys.stderr.write(str(message) + "\n")
+        sys.stderr.write("Exception >>> " + exception+ "\n")
+        sys.stderr.write("================================="+ "\033[0m\n")
 
 
 def main():
+    msg = print_message()
     msg.info("Starting bunker backup...")
 
     # 設定ファイルを開く
@@ -128,7 +141,7 @@ def main():
     bucket = s3.Bucket(s3_bucket_name)
 
     msg.info("Uploading files...")
-    bucket.upload_file(backup_filename, f"{server_name}/{backup_filename}")
+    #bucket.upload_file(backup_filename, f"{server_name}/{backup_filename}")
     msg.info("Success!")
 
     # post_backup_exec
