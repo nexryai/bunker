@@ -9,7 +9,7 @@
  - バックアップ前後に任意のコマンドを実行可能。サーバーのバックアップにも最適です。
 
 ## インストール
-`pip install git+https://git.sda1.net/nexryai/bunker`
+`sudo pip install git+https://git.sda1.net/nexryai/bunker`
 
 ## 設定
 ### Step1
@@ -20,7 +20,7 @@ PGP鍵を生成します。複数レイヤーで暗号化したい場合は複�
 `gpg --export-keys --armor [生成した鍵のID] > public.key`で公開鍵をエクスポートし、サーバへ送りつけます。テキストファイルとして開けるのでサーバーにsshで繋ぎエディターに貼っつけるのがおすすめです。  
 送りつけたら`gpg --import [ファイル名]`でインポートします。
 
-### Step
+### Step3
 `/etc/bunker/config.yml` を作成し以下のように設定を行います。
 
 ```
