@@ -3,6 +3,7 @@ import sys
 import boto3
 import gnupg
 import yaml
+import subprocess
 import datetime
 import dbm
 from getpass import getpass
