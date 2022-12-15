@@ -56,5 +56,5 @@ post_backup_exec:
 ### バックアップ
 `bunker backup` をrootとして実行するだけです。
 
-###リストア
+### リストア
 秘密鍵を生成したマシンで `bunker restore` を実行します。
