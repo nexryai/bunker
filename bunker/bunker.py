@@ -3,7 +3,6 @@ import sys
 import boto3
 import gnupg
 import yaml
-import subprocess
 import datetime
 import dbm
 from getpass import getpass
@@ -101,14 +100,17 @@ def backup():
 
     # pre_backup_exec
     for pre_command in pre_backup_exec:
-        cmd_args = pre_command.split()
         try:
-            subprocess.check_output(cmd_args)
+            pre_command_result = os.system(pre_command)
         except Exception as e:
             msg.fetal_error(f"pre_backup_exec command ({pre_command}) did not complete successfully.", e)
             sys.exit(1)
         else:
             msg.info(f"pre_backup_exec command ({pre_command}) executed successfully!")
+        
+        if pre_command_result != 0:
+            msg.error(f"pre_backup_exec command ({pre_command}) did not complete successfully.")
+            sys.exit(1)
 
     # バックアップするディレクトリが存在するか
     for chk_dir in backup_dirs:
@@ -195,14 +197,17 @@ def backup():
 
     # post_backup_exec
     for post_command in post_backup_exec:
-        cmd_args = post_command.split()
         try:
-            subprocess.check_output(cmd_args)
+            post_command_result = os.system(post_command)
         except Exception as e:
             msg.fetal_error(f"post_backup_exec command ({post_command}) did not complete successfully.", e)
             sys.exit(1)
         else:
             msg.info(f"post_backup_exec command ({post_command}) executed successfully!")
+        
+        if post_command_result != 0:
+            msg.error(f"post_backup_exec command ({post_command}) did not complete successfully.")
+            sys.exit(1)
 
 
 def restore():
