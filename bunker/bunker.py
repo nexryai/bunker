@@ -199,10 +199,10 @@ def backup():
         try:
             subprocess.check_output(cmd_args)
         except Exception as e:
-            msg.fetal_error(f"pre_backup_exec command ({post_command}) did not complete successfully.", e)
+            msg.fetal_error(f"post_backup_exec command ({post_command}) did not complete successfully.", e)
             sys.exit(1)
         else:
-            msg.info(f"pre_backup_exec command ({post_command}) executed successfully!")
+            msg.info(f"post_backup_exec command ({post_command}) executed successfully!")
 
 
 def restore():
